@@ -1,0 +1,39 @@
+{
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "module": "CommonJS",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/lib": ["libs/common/src"],
+      "@app/lib/*": ["libs/common/*"],
+      "@users/*": ["src/users/*"],
+      "@addresses/*": ["src/addresses/*"],
+      "@auth/*": ["src/auth/*"],
+      "@email/*": ["src/email/*"],
+      "@refresh-sessions/*": ["src/refresh-sessions/*"],
+      "@product/*": ["src/products/*"],
+      "@order/*": ["src/order/*"],
+      "@cart/*": ["src/cart/*"],
+      "@delivery/*": ["src/delivery/*"],
+      "@review/*": ["src/user-review/*"],
+      "@auth-google/*": ["src/auth-google/*"]
+    }
+  }
+}
