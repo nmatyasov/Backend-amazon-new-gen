@@ -16,7 +16,7 @@ export class SharpPipe
     const uploadPath = join(
       process.env.PWD,
       configService.get<string>('STATIC_FOLDER'),
-      'images'
+      'images',
     );
 
     await sharp(image.buffer)
