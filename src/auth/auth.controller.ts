@@ -114,7 +114,7 @@ export class AuthController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'Refresh header with access token',
-   // type: JwtPayload,
+    // type: JwtPayload,
   })
   @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' })
   @ApiResponse({ status: HttpStatus.UNAUTHORIZED, description: 'Unauthorized' })
