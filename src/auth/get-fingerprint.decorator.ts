@@ -23,5 +23,5 @@ export const GetFingerprintBrowser = createParamDecorator(
     const info = `${ipno}:${secchua}:${useragent}:${acceptlanguage}:${upgradeinsecurereq}`;
 
     return createHash('md5').update(info).digest('hex');
-  }
+  },
 );

@@ -57,7 +57,7 @@ export class UsersController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'Return jwtPayload',
-   // type: JwtPayload,
+    // type: JwtPayload,
   })
   @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' })
   @ApiResponse({ status: HttpStatus.UNAUTHORIZED, description: 'Unauthorized' })
