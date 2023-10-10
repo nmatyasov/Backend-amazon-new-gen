@@ -5,7 +5,12 @@ import { OrderUpdateDto } from '@order/dto/update-order.dto';
 
 @Injectable()
 export class OrderService {
-  updateProductLine(_id: string, id: string, lineid: string, data: OrderUpdateDto) {
+  updateProductLine(
+    _id: string,
+    id: string,
+    lineid: string,
+    data: OrderUpdateDto,
+  ) {
     throw new Error('Method not implemented.');
   }
   /**
@@ -65,5 +70,4 @@ export class OrderService {
   addProductLine(userId: string, data: AddProductLineDto): Promise<void> {
     throw new Error('Method not implemented.');
   }
-
 }
