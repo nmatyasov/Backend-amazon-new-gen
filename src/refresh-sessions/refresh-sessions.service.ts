@@ -90,9 +90,8 @@ export class RefreshSessionsService {
       },
     };
 
-    const olderToken: TokensEntity[] = await this.tokensRepository.find(
-      findOptions,
-    );
+    const olderToken: TokensEntity[] =
+      await this.tokensRepository.find(findOptions);
 
     /*TODO */
     /*Цикл по ключам и удаение пророченных */
