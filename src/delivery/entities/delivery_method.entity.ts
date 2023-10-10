@@ -8,5 +8,5 @@ export class DeliveryMethodEntity extends AbstractEntity {
   delivery_method: string;
 
   @OneToMany(() => OrderEntity, (order) => order.delivery_method)
-  order: OrderEntity;
+  order: OrderEntity[];
 }
