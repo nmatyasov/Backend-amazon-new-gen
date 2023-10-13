@@ -20,5 +20,5 @@ export class UserReviewEntity extends AbstractEntity {
   rating_value: number;
 
   @Column({ name: 'comment' })
-  comment: number;
+  comment: string;
 }

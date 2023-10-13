@@ -4,7 +4,7 @@ import { Expose } from 'class-transformer';
 import { UserAddressEntity } from '@addresses/entities/user_address.entity';
 import { Column, Entity, OneToMany } from 'typeorm';
 import { ShoppingCartEntity } from '@cart/entities/shopping_cart.entity';
-import { UserReviewEntity } from '@review/entities/user_review.entity';
+import { UserReviewEntity } from '@review/entities/user-review.entity';
 
 @Entity({ name: 'users' })
 export class UsersEntity extends AbstractEntity {
