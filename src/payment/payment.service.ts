@@ -19,7 +19,7 @@ export class PaymentService {
    * @param id {string} card identifier
    * @returns Promise<void>
    */
-  getCardById(cardId: string, id: string): Promise<void> {
+  getCardById(userId: string, id: string): Promise<void> {
     throw new Error('Method not implemented.');
   }
 
