@@ -65,10 +65,11 @@ export class UserReviewService {
 
   /**
    * Добавление id изображения в список изображений комментария
-   * @param  data: ReviewImageDto,
+   * @param id {string} review identifier
+   * @param file имя загруженного файла
    * @returns Promise<void>
    */
-  addImg2Review(data: ReviewImageDto) {
+  uploadFile(id: string, file: string) {
     throw new Error('Method not implemented.');
   }
 }

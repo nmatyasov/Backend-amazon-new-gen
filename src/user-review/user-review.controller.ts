@@ -33,6 +33,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { multerOptions } from '@app/lib/src/config/mutler.config';
 import { SharpPipe } from '@app/lib';
 import { ReviewImageDto } from '@review/dto/add-img-to-review.dto';
+import { SimpleDto } from '@app/lib/src/dtos/simple.dto';
 
 @ApiTags('User Review')
 @Controller('user-reviews')
@@ -190,12 +191,12 @@ export class UserReviewController {
   }
 
   @ApiOperation({
-    summary: 'Add img to review',
+    summary: 'Upload single file',
   })
   @ApiBody({
-    type: ReviewImageDto,
+    type: SimpleDto,
     description:
-      'The Description for the Review Img Body. Please look into the DTO. You will see the @ApiOptionalProperty used to define the Schema.',
+      'The identificator for the Review Img Body. Please look into the DTO. You will see the @ApiOptionalProperty used to define the Schema.',
     /*TODO добавить пример */
     /* examples: {
         a: {
@@ -216,23 +217,6 @@ export class UserReviewController {
     /*TODO добавить тип response */
     //type: ,
   })
-  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Bad Request' })
-  @ApiResponse({ status: HttpStatus.UNAUTHORIZED, description: 'Unauthorized' })
-  @UseGuards(JwtAuthenticationGuard)
-  @Post('addimg2review')
-  async addImg2Review(@Body() data: ReviewImageDto) {
-    return await this.userreviewService.addImg2Review(data);
-  }
-
-  @ApiOperation({
-    summary: 'Upload single file',
-  })
-  @ApiResponse({
-    status: HttpStatus.OK,
-    description: 'Success',
-    /*TODO добавить тип response */
-    //type: ,
-  })
   @Post('upload')
   @UseGuards(JwtAuthenticationGuard)
   @UseInterceptors(
@@ -241,7 +225,11 @@ export class UserReviewController {
       fileFilter: multerOptions.fileFilter,
     }),
   )
-  async uploadFile(@UploadedFile(SharpPipe) file: string) {
+  async uploadFile(
+    @Body() simpleDto: SimpleDto,
+    @UploadedFile(SharpPipe) file: string,
+  ) {
+    await this.userreviewService.uploadFile(simpleDto.id, file);
     const result = {
       filename: file,
     };
