@@ -1,0 +1,3 @@
+# This will let you configure line-endings on an individual basis
+git config core.eol lf
+git config core.autocrlf input
